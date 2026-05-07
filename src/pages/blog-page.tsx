@@ -12,11 +12,7 @@ const BlogPage = () => {
   const category = searchParams.get("category")
   const search = searchParams.get("search")
 
-  const {
-    data: blogPosts,
-    
-    isPending,
-  } = useQuery({
+  const { data: blogPosts, isPending } = useQuery({
     queryKey: ["blog", { page, category, search }],
     queryFn: () =>
       PostsService.list({

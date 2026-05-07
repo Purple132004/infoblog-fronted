@@ -51,7 +51,8 @@ const PostEditorForm = ({
   const navigate = useNavigate()
   const { user } = useAuthStore()
 
-  const { data: featuredImageUrl, isError: featuredImageError } = usePostFeaturedImage(initialPost)
+  const { data: featuredImageUrl, isError: featuredImageError } =
+    usePostFeaturedImage(initialPost)
 
   const form = useForm<PostEditorFormValues>({
     resolver: zodResolver(postEditorFormSchema),
